@@ -9,21 +9,17 @@
     <version>0.0.1</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <version.build>c6564ac2ac</version.build>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.github.jalexpr</groupId>
             <artifactId>tawt</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>gama</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
             <exclusions>
                 <exclusion>
                     <groupId>ru.textanalysis.tawt</groupId>
@@ -38,7 +34,7 @@
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>ambiguity-words-filter</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
             <exclusions>
                 <exclusion>
                     <groupId>ru.textanalysis.tawt</groupId>
@@ -49,7 +45,7 @@
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>jmorfsdk</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
             <exclusions>
                 <exclusion>
                     <groupId>ru.textanalysis.tawt</groupId>
@@ -60,17 +56,17 @@
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>graphematic-parser</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
         </dependency>
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>morphological-structures</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
         </dependency>
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>rules-for-compatibility</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
             <exclusions>
                 <exclusion>
                     <groupId>ru.textanalysis.tawt</groupId>
@@ -81,7 +77,7 @@
         <dependency>
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>syntactic-parser</artifactId>
-            <version>${version.build}</version>
+            <version>c6564ac2ac</version>
             <exclusions>
                 <exclusion>
                     <groupId>ru.textanalysis.tawt</groupId>
