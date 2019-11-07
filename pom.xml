@@ -91,6 +91,10 @@
                     <groupId>ru.textanalysis.tawt</groupId>
                     <artifactId>ambiguity-words-filter</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>ru.textanalysis.tawt</groupId>
+                    <artifactId>rules-for-compatibility</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
     </dependencies>
