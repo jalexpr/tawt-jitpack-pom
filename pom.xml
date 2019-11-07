@@ -40,6 +40,10 @@
                     <groupId>ru.textanalysis.tawt</groupId>
                     <artifactId>morphological-structures</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>ru.textanalysis.tawt</groupId>
+                    <artifactId>rules-for-compatibility</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
