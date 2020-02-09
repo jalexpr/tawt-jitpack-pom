@@ -11,7 +11,7 @@ public class Test {
         SyntaxParser sp = new SyntaxParser();
         sp.init();
         List<BearingPhraseSP> phrase
-                = sp.getTreeSentence("Стало ясно, что будет с российской валютой.");
+                = sp.getTreeSentence("Стало ясно, что будет с российской валютой. кппупы. fhdfh. &*&");
         phrase.forEach(System.out::println);
         List<BearingPhraseExt> phraseExts
                 = sp.getTreeSentenceWithoutAmbiguity("Стало ясно, что будет с российской валютой. " +
