@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <version.tawt>fbbe5cab83</version.tawt>
+        <version.tawt>66b3ffb881</version.tawt>
     </properties>
 
     <dependencies>
@@ -58,6 +58,10 @@
                     <groupId>ru.textanalysis.tawt</groupId>
                     <artifactId>morphological-structures</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>ru.textanalysis.tawt</groupId>
+                    <artifactId>morphological-dictionary</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -103,6 +107,11 @@
                     <artifactId>rules-for-compatibility</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jalexpr.tawt</groupId>
+            <artifactId>morphological-dictionary</artifactId>
+            <version>${version.tawt}</version>
         </dependency>
     </dependencies>
 
