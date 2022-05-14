@@ -8,7 +8,7 @@ public class Test {
     public static void main(String[] args) {
         SyntaxParser sp = new SyntaxParser();
         sp.init();
-        Sentence phrase = sp.getTreeSentence("Стало ясно, что будет с российской валютой. кппупы. fhdfh. &*&");
+        Sentence phrase = sp.getTreeSentence("Стало ясно, что будет с российской валютой.Кппупы fhdfh");
         phrase.getBearingPhrases().forEach(System.out::println);
 
         Sentence phraseExts = sp.getTreeSentence("Стало ясно, что будет с российской валютой. " +

@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <version.tawt>89f2e8a968</version.tawt>
+        <version.tawt>56bb595711</version.tawt>
     </properties>
 
     <dependencies>
