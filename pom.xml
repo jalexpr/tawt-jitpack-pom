@@ -6,11 +6,11 @@
 
     <groupId>ru.textanalysis.tawt</groupId>
     <artifactId>tawt-jitpack-pom</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <packaging>pom</packaging>
 
     <properties>
-        <version.tawt>56bb595711</version.tawt>
+        <version.tawt>9332b0163e</version.tawt>
     </properties>
 
     <dependencies>
