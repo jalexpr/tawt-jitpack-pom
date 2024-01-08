@@ -1,9 +1,7 @@
-package ru.textanalysis.tawt;
+package ru.textanalysis.tawt.example;
 
 import ru.textanalysis.tawt.ms.model.sp.Sentence;
 import ru.textanalysis.tawt.sp.api.SyntaxParser;
-
-import java.util.List;
 
 public class Test {
 	public static void main(String[] args) {
