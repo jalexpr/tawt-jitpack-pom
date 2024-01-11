@@ -1,10 +1,77 @@
 package ru.textanalysis.tawt.example;
 
+import ru.textanalysis.tawt.jmorfsdk.JMorfSdk;
+import ru.textanalysis.tawt.jmorfsdk.JMorfSdkFactory;
+import ru.textanalysis.tawt.ms.grammeme.MorfologyParameters;
 import ru.textanalysis.tawt.ms.model.sp.Sentence;
 import ru.textanalysis.tawt.sp.api.SyntaxParser;
 
+import java.util.List;
+
 public class Test {
 	public static void main(String[] args) {
+
+//		Пример фильтрации списка слов по морфологической характеристике «женскому рода»
+		{
+			JMorfSdk jMorfSdk = JMorfSdkFactory.loadFullLibrary();
+			List<String> words = List.of(
+				"осенний", "осенней", "площадь",
+				"стол", "играть", "конференция",
+				"на", "бежала", "пошла"
+			);
+			for (String word : words) {
+				jMorfSdk.getOmoForms(word).forEach(form -> {
+					if (form.getMorfCharacteristicsByIdentifier(MorfologyParameters.Gender.class)
+						== MorfologyParameters.Gender.FEMININ) {
+						System.out.println(form + " - " + word);
+					}
+				});
+			}
+		}
+
+//		Результат:
+//		{TF=DERIVATIVE, isInit=false, hash=483826128, str='осенней',     ToS=18, morf=168}    - осенней
+//		{TF=DERIVATIVE, isInit=false, hash=483826128, str='осенней',     ToS=18, morf=232}    - осенней
+//		{TF=DERIVATIVE, isInit=false, hash=483826128, str='осенней',     ToS=18, morf=360}    - осенней
+//		{TF=DERIVATIVE, isInit=false, hash=483826128, str='осенней',     ToS=18, morf=488}    - осенней
+//		{TF=DERIVATIVE, isInit=false, hash=531053606, str='площадь',     ToS=17, morf=555}    - площадь
+//		{TF=INITIAL,    isInit=true,  hash=50570022,  str='площадь',     ToS=17, morf=107}    - площадь
+//		{TF=INITIAL,    isInit=true,  hash=29609046,  str='конференция', ToS=17, morf=107}    - конференция
+//		{TF=DERIVATIVE, isInit=false, hash=778892744, str='бежала',      ToS=20, morf=670760} - бежала
+//		{TF=DERIVATIVE, isInit=false, hash=778892744, str='бежала',      ToS=20, morf=669736} - бежала
+
+
+//		Пример генерации слов по начальной форме слова, части речи и морфологических характеристикам
+		{
+			JMorfSdk jMorfSdk = JMorfSdkFactory.loadFullLibrary();
+			jMorfSdk.getOmoForms("гладь")
+				.forEach(System.out::println);
+		}
+
+//		Результат:
+//		initialFormString = глажу, typeOfSpeech = 20, morfCharacteristics = 7886912
+//		initialFormString = гладь, typeOfSpeech = 17, morfCharacteristics = 219
+//		initialFormString = гладь, typeOfSpeech = 17, morfCharacteristics = 1115
+
+
+//		Пример генерации слов по начальной форме слова, части речи и морфологических характеристикам
+		{
+			JMorfSdk jMorfSdk = JMorfSdkFactory.loadFullLibrary();
+			jMorfSdk.getDerivativeFormLiterals(
+				"мыло",
+				MorfologyParameters.TypeOfSpeech.NOUN, MorfologyParameters.Numbers.SINGULAR
+			).forEach(System.out::println);
+		}
+//
+//		Результат:
+//		мыла
+//		мылу
+//		мыло
+//		мылом
+//		мыле
+
+
+//		Пример инициализации модуля SP, с последующим вызовом метода семантико-синтаксического анализа и полученного результата
 		SyntaxParser sp = new SyntaxParser();
 		sp.init();
 		{
