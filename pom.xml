@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <version.tawt>978b045191</version.tawt>
+        <version.tawt>496c1e91aa</version.tawt>
     </properties>
 
     <dependencies>
@@ -112,6 +112,17 @@
             <groupId>com.github.jalexpr.tawt</groupId>
             <artifactId>morphological-dictionary</artifactId>
             <version>${version.tawt}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jalexpr.tawt</groupId>
+            <artifactId>relationship-networks</artifactId>
+            <version>${version.tawt}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ru.textanalysis.tawt</groupId>
+                    <artifactId>jmorfsdk</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
