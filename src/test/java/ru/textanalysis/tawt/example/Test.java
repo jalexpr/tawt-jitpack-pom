@@ -3,13 +3,35 @@ package ru.textanalysis.tawt.example;
 import ru.textanalysis.tawt.jmorfsdk.JMorfSdk;
 import ru.textanalysis.tawt.jmorfsdk.JMorfSdkFactory;
 import ru.textanalysis.tawt.ms.grammeme.MorfologyParameters;
+import ru.textanalysis.tawt.ms.model.jmorfsdk.Form;
 import ru.textanalysis.tawt.ms.model.sp.Sentence;
+import ru.textanalysis.tawt.rn.RelationshipNetworks;
 import ru.textanalysis.tawt.sp.api.SyntaxParser;
 
+import java.util.Collection;
 import java.util.List;
 
 public class Test {
 	public static void main(String[] args) {
+
+		{
+			JMorfSdk jMorfSdk = JMorfSdkFactory.loadFullLibrary();
+			int depth = 0;
+			RelationshipNetworks relationshipNetworks = new RelationshipNetworks();
+			relationshipNetworks.init();
+
+			int initKey = jMorfSdk.getOmoForms("деньги").get(0).getInitialFormKey();
+			relationshipNetworks.getWords(initKey).stream()
+				.map(se -> se.get(depth))
+				.map(relationshipNetworks::getRows)
+				.flatMap(Collection::stream)
+				.forEach(myKey -> {
+					List<Form> forms = jMorfSdk.getOmoForms(myKey);
+					forms.forEach(form -> {
+						System.out.println(form.getMyString() + " " + form.getMorphCharacteristics());
+					});
+				});
+		}
 
 //		Пример фильтрации списка слов по морфологической характеристике «женскому рода»
 		{
