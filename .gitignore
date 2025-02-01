@@ -3,4 +3,6 @@
 .gitconfig
 target
 out
+*.log
+*.txt
 
